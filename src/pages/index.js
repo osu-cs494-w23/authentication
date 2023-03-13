@@ -5,6 +5,8 @@ export default function Home() {
 
     useEffect(() => {
         async function fetchData() {
+            // const token = window.localStorage.getItem("token")
+            // console.log("== accessed token:", token)
             const res = await fetch('/api/user')
             const body = await res.json()
             setUser(body)
