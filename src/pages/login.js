@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 
 function Login() {
+    const router = useRouter()
     const [ username, setUsername ] = useState("")
     const [ password, setPassword ] = useState("")
     const [ error, setError ] = useState(null)
@@ -22,6 +24,7 @@ function Login() {
             setError(null)
             console.log("== successful auth, token:", resBody.token)
             console.log("== document.cookie:", document.cookie)
+            router.push(router.query.redirect || "/")
             /*
              * Don't store in localStorage!! It's not secure.
              */

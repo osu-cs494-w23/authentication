@@ -2,6 +2,7 @@ import { generateAuthToken, setAuthCookie } from '@/lib/auth'
 
 import USER from '@/data/user'
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default (req, res) => {
     if (req.method !== "POST") {
         res.status(405).send({ err: "Only POSTs are accepted here" })
